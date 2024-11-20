@@ -1,0 +1,11 @@
+.hero_section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo {
+  font-size: 100px;
+  color: var(--main-color);
+  font-weight: 600;
+}
