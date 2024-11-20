@@ -7,9 +7,10 @@ export default function Hero({ blok }: { blok: any }) {
       <div className="container">
         <div className={styles.hero_wrp}>
           <span className={styles.logo}>HMS</span>
-          <small> Heorhii Mynko School</small>
+          <small>Heorhii Mynko School</small>
           <br />
-          <h1 className={styles.hero_title}>{blok.title}</h1>
+          <br />
+          <p className={styles.hero_title}>{blok.title}</p>
         </div>
       </div>
     </section>
