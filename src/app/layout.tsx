@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import StoryblokProvider from "@/app/components/StoryblokProvider";
 import { Inter } from "next/font/google";
+import { Header } from "./components/Header/Header";
 
 export const metadata: Metadata = {
   title: "Heorhii Mynko School",
@@ -30,7 +31,10 @@ export default function RootLayout({
   return (
     <StoryblokProvider>
       <html lang="uk">
-        <body className={font.className}>{children}</body>
+        <body className={font.className}>
+          <Header />
+          {children}
+        </body>
       </html>
     </StoryblokProvider>
   );
