@@ -2,8 +2,9 @@ import type { Metadata, Viewport } from "next";
 // import localFont from "next/font/local";
 import "./globals.css";
 import StoryblokProvider from "@/app/components/StoryblokProvider";
-import { Inter } from "next/font/google";
+import { Roboto, Philosopher } from "next/font/google";
 import { Header } from "./components/Header/Header";
+import clsx from "clsx";
 
 export const metadata: Metadata = {
   title: "Heorhii Mynko School",
@@ -21,7 +22,12 @@ export const viewport: Viewport = {
   // Also supported by less commonly used
   // interactiveWidget: 'resizes-visual',
 };
-const font = Inter({ weight: "300", subsets: ["cyrillic", "latin"] });
+const font = Roboto({ weight: "400", subsets: ["cyrillic", "latin"] });
+const font2 = Philosopher({
+  weight: "400",
+  subsets: ["cyrillic", "latin"],
+  variable: "--font-heads",
+});
 
 export default function RootLayout({
   children,
@@ -31,7 +37,7 @@ export default function RootLayout({
   return (
     <StoryblokProvider>
       <html lang="uk">
-        <body className={font.className}>
+        <body className={clsx(font.className, font2.variable)}>
           <Header />
           {children}
         </body>

@@ -5,10 +5,14 @@
   padding: 1rem 0;
   overflow: hidden;
   width: 100%;
-  background-color: var(--background);
-  border-bottom: 1px solid var(--foreground);
+  background-color: var(--main-color);
+  /* border-bottom: 1px solid var(--foreground); */
   /* box-shadow: 0 0 10px 3px var(--foreground); */
   transition: transform 0.3s ease-in-out;
+  border-bottom-right-radius: var(--br);
+  border-bottom-left-radius: var(--br);
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .header_visible {
   transform: translateY(0);
@@ -39,21 +43,21 @@
   gap: 2rem;
 }
 .nav a {
-  padding: 7px 0;
+  padding: 10px 0;
   display: block;
   line-height: 1;
   overflow: hidden;
   position: relative;
 }
 .nav a:hover {
-  color: var(--main-color);
+  color: var(--snd-color);
 }
 .nav a::before {
   content: "";
   display: block;
   width: 100%;
   height: 2px;
-  background-color: var(--main-color);
+  background-color: var(--snd-color);
   position: absolute;
   bottom: -2px;
   transform: scaleX(0);
@@ -63,13 +67,33 @@
   bottom: 4px;
   transform: scaleX(1);
 }
+.button {
+  cursor: pointer;
+  appearance: none;
+  background-color: transparent;
+  padding: 0.5rem 1rem;
+  outline: none;
+  border: 1px solid var(--snd-color);
+  border-radius: var(--br);
+  transition: all 0.2s ease;
+  font-size: inherit;
+  color: inherit;
+  font-weight: 500;
+}
+.button:hover {
+  box-shadow: 0px 0px 15px 4px var(--snd-color);
+  outline: 2px solid var(--snd-color);
+  outline-offset: 6px;
+  border-color: transparent;
+}
+
 .brg {
   display: none;
   position: relative;
   height: 16px;
   cursor: pointer;
   z-index: 10;
-  margin: 7px 0;
+  margin: 10px 0;
 }
 .brg_open {
   transform: rotate(45deg);
@@ -78,7 +102,7 @@
 .line {
   height: 2px;
   width: 100%;
-  background-color: var(--foreground);
+  background-color: white;
   position: absolute;
   border-radius: 50vw;
   transition: all 0.4s ease;

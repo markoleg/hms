@@ -11,7 +11,9 @@
     "proxy": "npx local-ssl-proxy --source 3010 --target 3000 --cert localhost.pem --key localhost-key.pem"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.1",
     "@storyblok/react": "^4.0.0",
+    "clsx": "^2.1.1",
     "next": "15.0.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

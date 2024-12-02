@@ -67,10 +67,10 @@ export const Header = () => {
             <nav className={styles.nav}>
               <Link href="#">Курси</Link>
               <Link href="#">Ціни</Link>
-              <Link href="#">Для викладачів</Link>
+              <Link href="#">Відгуки</Link>
             </nav>
-            <Link href="#" className="button">
-              Пробний урок
+            <Link href="#" className={styles.button}>
+              Пробне заняття
             </Link>
           </div>
         </div>

@@ -1,0 +1,11 @@
+.trans_section {
+  overflow: hidden;
+  padding: 2rem 0;
+  background-color: var(--main-color);
+  color: rgba(255, 255, 255, 0.24);
+  font-size: 1.5rem;
+}
+.trans_section > div {
+  display: flex;
+  text-wrap: nowrap;
+}
