@@ -3,17 +3,11 @@ import styles from "./Hero.module.css";
 import Image from "next/image";
 
 export default function Hero({ blok }: { blok: any }) {
-  // const title = blok.title.split("");
   return (
     <section className={styles.hero_section} {...storyblokEditable(blok)}>
       <div className="container">
         <div className={styles.hero_wrp}>
           <div className={styles.hero_inner}>
-            {/* <h1>
-              {title.map((l: string, i: number) => {
-                return <span key={i}>{l}</span>;
-              })}
-            </h1> */}
             {blok.title != "" ? (
               <h1>{blok.title}</h1>
             ) : (
@@ -36,6 +30,9 @@ export default function Hero({ blok }: { blok: any }) {
             />
           </div>
         </div>
+      </div>
+      <div className={styles.trump}>
+        <Image src="/trumppumpum.png" width={980} height={599} alt="Трамп" />
       </div>
     </section>
   );

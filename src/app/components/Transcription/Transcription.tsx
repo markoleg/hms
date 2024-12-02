@@ -19,7 +19,7 @@ export default function Transcription({ blok }: { blok: any }) {
           start: "top 20%",
           end: "bottom 18%",
           scrub: true,
-          markers: true,
+          markers: false,
         },
       }
     );
