@@ -11,9 +11,9 @@ export default function Transcription({ blok }: { blok: any }) {
     gsap.registerPlugin(ScrollTrigger);
     gsap.fromTo(
       ".tl",
-      { x: -500 },
+      { x: 0 },
       {
-        x: 500,
+        x: -500,
         scrollTrigger: {
           trigger: body,
           start: "top 20%",

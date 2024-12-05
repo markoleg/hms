@@ -1,0 +1,73 @@
+.section {
+  position: relative;
+  /* height: 100vh; */
+  /* padding: 0; */
+  overflow: hidden;
+}
+
+.benefits_wrp {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  /* height: 400vh;  */
+  position: relative;
+}
+
+.cards_wrp {
+  display: grid;
+  /* gap: 20rem; */
+  position: relative;
+  align-items: start;
+}
+
+.card {
+  grid-area: 1/1/2/2;
+  opacity: 0.7;
+  transform: translateY(111lvh);
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: opacity 0.3s ease;
+  margin-top: calc(var(--index) * 50px);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.card:nth-child(even) {
+  background-color: #f6f6ff;
+}
+.card h3 {
+  margin: 0 0 10px;
+  font-size: 1.3rem;
+}
+
+.image {
+  width: 50%;
+  height: 100%;
+  object-fit: contain;
+}
+@media (width<680px) {
+  .image {
+    margin-inline: auto;
+  }
+  .benefits_wrp {
+    flex-direction: column-reverse;
+    gap: 2rem;
+  }
+  .cards_wrp {
+    gap: 1rem;
+  }
+  .card {
+    opacity: 1;
+    grid-area: unset;
+    margin: 0;
+    /* transform: none; */
+  }
+  .card:nth-child(even) {
+    transform: translateX(100vw);
+  }
+  .card:nth-child(odd) {
+    transform: translateX(-100vw);
+  }
+  .card h3 {
+    font-size: 1.1rem;
+  }
+}

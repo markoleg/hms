@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function Hero({ blok }: { blok: any }) {
   return (
     <section className={styles.hero_section} {...storyblokEditable(blok)}>
-      <div className="container">
+      <div className={styles.container}>
         <div className={styles.hero_wrp}>
           <div className={styles.hero_inner}>
             {blok.title != "" ? (
@@ -29,10 +29,15 @@ export default function Hero({ blok }: { blok: any }) {
               alt="Зображення онлайн навчання"
             />
           </div>
+          <div className={styles.trump}>
+            <Image
+              src="/trumppumpum.png"
+              width={980}
+              height={599}
+              alt="Трамп"
+            />
+          </div>
         </div>
-      </div>
-      <div className={styles.trump}>
-        <Image src="/trumppumpum.png" width={980} height={599} alt="Трамп" />
       </div>
     </section>
   );

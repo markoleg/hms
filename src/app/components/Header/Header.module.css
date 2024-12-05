@@ -6,13 +6,11 @@
   overflow: hidden;
   width: 100%;
   background-color: var(--main-color);
-  /* border-bottom: 1px solid var(--foreground); */
-  /* box-shadow: 0 0 10px 3px var(--foreground); */
   transition: transform 0.3s ease-in-out;
   border-bottom-right-radius: var(--br);
   border-bottom-left-radius: var(--br);
   color: white;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-heads);
 }
 .header_visible {
   transform: translateY(0);
