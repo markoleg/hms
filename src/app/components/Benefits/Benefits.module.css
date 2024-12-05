@@ -2,49 +2,67 @@
   position: relative;
   /* height: 100vh; */
   /* padding: 0; */
-  overflow: hidden;
 }
 
 .benefits_wrp {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   position: relative;
 }
 
 .cards_wrp {
   display: grid;
+  grid-template-columns: 1fr 1fr;
   position: relative;
-  align-items: start;
+  gap: 1rem;
+  /* align-items: start; */
 }
 
 .card {
-  grid-area: 1/1/2/2;
-  opacity: 0.7;
-  transform: translateY(111lvh);
+  /* opacity: 0.8; */
+  transform: translateY(calc(var(--index) * var(--index) * 3lvh));
+  transform: translateY(calc(var(--index) * 90px));
   background: #fff;
   padding: 1rem;
   border-radius: 8px;
   transition: opacity 0.3s ease;
-  margin-top: calc(var(--index) * 50px);
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  /* margin-top: calc((var(--index) - 1) * 35px); */
+  /* margin-top: calc(var(--index) * 35px); */
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+.card:nth-child(4n-3),
+.card:nth-child(4n-2) {
+  background-color: #f6f6ff;
 }
 .card:nth-child(even) {
-  background-color: #f6f6ff;
+  /* grid-area: 1/1/2/2; */
+}
+.card:nth-child(odd) {
+  /* grid-area: 1/2/2/3; */
 }
 .card h3 {
   margin: 0 0 10px;
   font-size: 1.3rem;
+  color: var(--main-color);
+  text-wrap: pretty;
+  height: 2.7rem;
 }
 
 .image {
-  width: 50%;
+  width: 30%;
   height: 100%;
   object-fit: contain;
 }
-@media (width<680px) {
+@media (width<890px) {
+  .section {
+    padding: 0 0 4rem;
+    overflow: hidden;
+  }
   .image {
     margin-inline: auto;
+    max-width: 400px;
   }
   .benefits_wrp {
     flex-direction: column-reverse;
@@ -52,6 +70,7 @@
   }
   .cards_wrp {
     gap: 1rem;
+    grid-template-columns: 1fr;
   }
   .card {
     opacity: 1;
@@ -59,13 +78,23 @@
     margin: 0;
     /* transform: none; */
   }
+  .card:nth-child(4n-3),
+  .card:nth-child(4n-2) {
+    background-color: white;
+  }
+
   .card:nth-child(even) {
     transform: translateX(100vw);
   }
   .card:nth-child(odd) {
+    background-color: #f6f6ff;
     transform: translateX(-100vw);
   }
   .card h3 {
     font-size: 1.1rem;
+    height: auto;
+  }
+  .image {
+    width: 80%;
   }
 }

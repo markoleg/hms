@@ -20,16 +20,19 @@ export default function Benefits({ blok }: { blok: any }) {
     // Використовуємо ScrollTrigger.matchMedia для анімацій залежно від ширини екрана
     ScrollTrigger.matchMedia({
       // Для екранів ширше 680px
-      "(min-width: 680px)": function () {
+      "(min-width: 890px)": function () {
         gsap.to(cardsRef.current, {
           y: 0, // Рух на місце
           opacity: 1,
-          stagger: 0.8,
+          stagger: 1,
+          // ease: "expo.out",
+          // duration: "10s",
+
           scrollTrigger: {
             trigger: section,
             start: "top top",
-            end: "+=6000s",
-            pin: true, // Фіксує секцію
+            end: "+=2000s 50%",
+            pin: section, // Фіксує секцію
             scrub: true,
             markers: true,
           },
@@ -37,7 +40,7 @@ export default function Benefits({ blok }: { blok: any }) {
       },
 
       // Для екранів вже 680px (можна залишити без анімацій)
-      "(max-width: 679px)": function () {
+      "(max-width: 889px)": function () {
         // Вимкнення ScrollTrigger для мобільних
         // ScrollTrigger.killAll();
         gsap.to(cardsRef.current, {
@@ -45,10 +48,10 @@ export default function Benefits({ blok }: { blok: any }) {
           stagger: 0.8,
           scrollTrigger: {
             trigger: section,
-            start: "top center",
+            start: "10% center",
             end: "80% center",
             scrub: true,
-            markers: false,
+            markers: true,
           },
         });
       },
