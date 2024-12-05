@@ -31,7 +31,7 @@ export default function Benefits({ blok }: { blok: any }) {
             end: "+=6000s",
             pin: true, // Фіксує секцію
             scrub: true,
-            markers: false,
+            markers: true,
           },
         });
       },

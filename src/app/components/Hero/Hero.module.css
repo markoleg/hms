@@ -51,7 +51,7 @@
 .hero_inner {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 4rem;
   align-items: flex-start;
   justify-content: center;
   flex: 0 1 520px;
@@ -67,12 +67,12 @@
 }
 .hero_cta {
   appearance: none;
-  background-color: var(--main-color);
+  background-color: #7cc6fe;
   color: white;
   border: none;
-  padding: 1rem 1.5rem;
+  padding: 1.5rem 2.5rem;
   border-radius: var(--br);
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   cursor: pointer;
   transition: all 0.2s ease;
 }

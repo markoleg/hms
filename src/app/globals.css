@@ -87,7 +87,7 @@ h2 {
   margin-bottom: 1rem;
 }
 button {
-  font-family: var(--font-heads);
+  /* font-family: var(--font-heads); */
 }
 section {
   padding: 4rem 0;
