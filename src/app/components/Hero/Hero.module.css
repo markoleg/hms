@@ -33,7 +33,7 @@
   content: "";
   background-image: url("/trump.svg");
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 97%;
   position: absolute;
   z-index: 1;
   top: 0;
@@ -67,9 +67,9 @@
 }
 .hero_cta {
   appearance: none;
-  background-color: #7cc6fe;
-  color: white;
-  border: none;
+  background-color: var(--snd-color);
+  color: var(--main-color);
+  border: 1px solid var(--main-color);
   padding: 1.5rem 2.5rem;
   border-radius: var(--br);
   font-size: 1.4rem;
