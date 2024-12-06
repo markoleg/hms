@@ -25,8 +25,6 @@ export default function Benefits({ blok }: { blok: any }) {
           y: 0, // Рух на місце
           opacity: 1,
           stagger: 1,
-          // ease: "expo.out",
-          // duration: "10s",
           duration: 10,
 
           scrollTrigger: {
@@ -35,7 +33,7 @@ export default function Benefits({ blok }: { blok: any }) {
             end: "+=2000s 50%",
             pin: section, // Фіксує секцію
             scrub: true,
-            markers: true,
+            markers: false,
           },
         });
       },
@@ -52,7 +50,7 @@ export default function Benefits({ blok }: { blok: any }) {
             start: "10% center",
             end: "80% center",
             scrub: true,
-            markers: true,
+            markers: false,
           },
         });
       },
