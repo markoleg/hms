@@ -27,6 +27,7 @@ export default function Benefits({ blok }: { blok: any }) {
           stagger: 1,
           // ease: "expo.out",
           // duration: "10s",
+          duration: 10,
 
           scrollTrigger: {
             trigger: section,
