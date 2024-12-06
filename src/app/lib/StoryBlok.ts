@@ -5,11 +5,13 @@ import Transcription from "../components/Transcription/Transcription";
 import Highlights from "../components/Highlights/Highlights";
 import Benefits from "../components/Benefits/Benefits";
 import Courses from "../components/Courses/Courses";
+import CoursePage from "../components/Course";
 
 const token = process.env.NEXT_PUBLIC_SB_TOKEN;
 
 export const components = {
   page: Page,
+  course: CoursePage,
   hero: Hero,
   transcription: Transcription,
   highlights: Highlights,

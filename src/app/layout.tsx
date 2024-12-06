@@ -7,6 +7,7 @@ import { Header } from "./components/Header/Header";
 import clsx from "clsx";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://hms-seven.vercel.app"),
   title: "Heorhii Mynko School",
   description: "The best english school in Ukraine",
   openGraph: {

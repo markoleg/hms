@@ -10,7 +10,7 @@ export const dynamic = "force-dynamic";
 async function fetchData() {
   let sbParams: ISbStoriesParams = {
     version: "draft",
-    resolve_relations: ["courses_section.courses_grid"],
+    resolve_relations: ["courses.courses"],
   };
 
   const storyblokApi: StoryblokClient = getStoryblokApi();
@@ -21,7 +21,7 @@ async function fetchData() {
 export default async function Home() {
   const { data } = await fetchData();
   const bridgeOptions = {
-    resolveRelations: ["courses_section.courses_grid"],
+    resolveRelations: ["courses.courses"],
   };
   return <StoryblokStory story={data.story} bridgeOptions={bridgeOptions} />;
 }
