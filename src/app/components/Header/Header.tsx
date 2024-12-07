@@ -64,10 +64,10 @@ export const Header = () => {
             <div className={styles.line}></div>
           </div>
           <div className={styles.nav_wrp} id="menu">
-            <nav className={styles.nav}>
-              <Link href="#">Курси</Link>
-              <Link href="#">Ціни</Link>
-              <Link href="#">Відгуки</Link>
+            <nav className={styles.nav} onClick={() => setIsMenuOpen(false)}>
+              <Link href="#courses">Курси</Link>
+              <Link href="#prices">Ціни</Link>
+              <Link href="#testimonails">Відгуки</Link>
             </nav>
             <Link href="#" className={styles.button}>
               Пробне заняття

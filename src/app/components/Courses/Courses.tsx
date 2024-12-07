@@ -4,22 +4,28 @@ import Link from "next/link";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "swiper/css/free-mode";
+import "swiper/css/navigation";
+// import "swiper/css/free-mode";
+
+// import "react-tabs/style/react-tabs.css";
 
 import "./Courses.css";
 import styles from "./Courses.module.css";
 
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { render } from "storyblok-rich-text-react-renderer";
-
-// import "react-tabs/style/react-tabs.css";
+import { storyblokEditable } from "@storyblok/react";
 
 export default function Courses({ blok }: { blok: any }) {
   const tags: string[] = Array.from(
     new Set(blok.courses.map((course: any) => course.tag_list[0]))
   );
   return (
-    <section className={styles.section}>
+    <section
+      className={styles.section}
+      {...storyblokEditable(blok)}
+      id="courses"
+    >
       <div className="container">
         <h2>{blok.title}</h2>
       </div>
@@ -35,7 +41,12 @@ export default function Courses({ blok }: { blok: any }) {
         <div className="container">
           {tags.map((tag) => {
             return (
-              <TabPanel key={tag} id={tag} className={styles.tab_wrp}>
+              <TabPanel
+                key={tag}
+                id={tag}
+                className={styles.tab_wrp}
+                // forceRender={true}
+              >
                 <Swiper
                   slidesPerView={"auto"}
                   spaceBetween={20}

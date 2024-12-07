@@ -6,6 +6,9 @@
   max-width: 1240px;
   margin-inline: auto;
 }
+.react-tabs__tab:focus-visible {
+  outline: none;
+}
 .react-tabs__tab {
   padding: 1rem 2rem;
   cursor: pointer;
@@ -13,6 +16,10 @@
   font-family: var(--font-heads);
   font-size: 1.2rem;
   border: 1px solid var(--main-color);
+  transition: all 0.5s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 .react-tabs__tab:hover {
   outline: 1px solid var(--main-color);
@@ -20,6 +27,9 @@
 .react-tabs__tab--selected {
   background-color: var(--main-color);
   color: white;
+}
+.react-tabs .container > div {
+  height: 100%;
 }
 .react-tabs__tab-panel--selected {
   animation: courses 0.5s ease;
@@ -35,13 +45,13 @@
   }
 }
 
-.swiper {
+.react-tabs .swiper {
   overflow: visible;
 }
-.swiper-wrapper {
+.react-tabs .swiper-wrapper {
   align-items: stretch;
 }
-.swiper-slide {
+.react-tabs .swiper-slide {
   width: 27%;
   height: auto;
 }
@@ -56,12 +66,15 @@
   .react-tabs__tab {
     white-space: nowrap;
   }
-  .swiper-slide {
+  .react-tabs .swiper-slide {
     width: 37%;
   }
 }
 @media (width<650px) {
-  .swiper-slide {
+  .react-tabs .swiper-slide {
     width: 67%;
+  }
+  .react-tabs__tab {
+    padding: 0.7rem 1rem;
   }
 }

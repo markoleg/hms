@@ -5,6 +5,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styles from "./Benefits.module.css";
 import Image from "next/image";
+import { storyblokEditable } from "@storyblok/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -60,7 +61,11 @@ export default function Benefits({ blok }: { blok: any }) {
   }, []);
 
   return (
-    <section ref={sectionRef} className={styles.section}>
+    <section
+      ref={sectionRef}
+      className={styles.section}
+      {...storyblokEditable(blok)}
+    >
       <div className="container">
         <div className={styles.benefits_wrp}>
           <div className={styles.cards_wrp}>

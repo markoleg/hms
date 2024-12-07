@@ -26,7 +26,7 @@ export default function Hero({ blok }: { blok: any }) {
               src={blok.hero_img.filename}
               width={566}
               height={529}
-              alt="Зображення онлайн навчання"
+              alt={blok.hero_img.alt}
             />
           </div>
           <div className={styles.trump}>

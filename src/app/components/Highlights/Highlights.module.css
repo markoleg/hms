@@ -21,7 +21,7 @@
   --line-color: lightgray;
 }
 .card:not(:last-child) {
-  border-right: 2px solid var(--line-color);
+  border-right: 1px solid var(--line-color);
 }
 @media (width<1100px) {
   .highlights_wrp {
@@ -31,7 +31,7 @@
     border-right: none;
   }
   .card:nth-child(odd) {
-    border-right: 2px solid var(--line-color);
+    border-right: 1px solid var(--line-color);
   }
 }
 @media (width<610px) {
@@ -46,6 +46,6 @@
     border-right: none;
   }
   .card:not(:last-child) {
-    border-bottom: 2px solid var(--line-color);
+    border-bottom: 1px solid var(--line-color);
   }
 }
