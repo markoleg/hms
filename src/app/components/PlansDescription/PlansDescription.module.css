@@ -35,6 +35,9 @@
   .section h2 {
     font-size: 1.4rem;
   }
+  .card {
+    padding: 1rem;
+  }
   .cards_wrp {
     grid-template-columns: 1fr;
   }

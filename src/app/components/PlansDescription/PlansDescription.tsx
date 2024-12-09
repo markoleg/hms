@@ -7,6 +7,7 @@ import {
 import styles from "./PlansDescription.module.css";
 import Image from "next/image";
 import { render } from "storyblok-rich-text-react-renderer";
+import CTA from "../CTA/CTA";
 
 interface IPlanDescription extends SbBlokData {
   name: string;
@@ -60,6 +61,7 @@ export default function PlansDescription({
             </div>
           ))}
         </div>
+        <CTA>Спробувати безкоштовно</CTA>
       </div>
     </section>
   );

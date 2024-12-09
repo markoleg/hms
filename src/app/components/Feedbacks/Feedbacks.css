@@ -1,0 +1,28 @@
+.feedbacks_swiper .swiper {
+  overflow: visible;
+  padding-bottom: 70px;
+}
+
+.feedbacks_swiper .swiper-slide {
+  width: 27%;
+}
+.feedbacks_swiper .swiper .swiper-button-prev,
+.feedbacks_swiper .swiper .swiper-button-next {
+  top: unset;
+  bottom: 0;
+  left: 0;
+  color: var(--main-color);
+}
+.feedbacks_swiper .swiper .swiper-button-next {
+  left: 50px;
+}
+@media (width<900px) {
+  .feedbacks_swiper .swiper-slide {
+    width: 37%;
+  }
+}
+@media (width<650px) {
+  .feedbacks_swiper .swiper-slide {
+    width: 77%;
+  }
+}

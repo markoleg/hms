@@ -9,6 +9,9 @@ import CoursePage from "../components/Course";
 import Stats from "../components/Stats/Stats";
 import Prices from "../components/Prices/Prices";
 import PlansDescription from "../components/PlansDescription/PlansDescription";
+import Feedbacks from "../components/Feedbacks/Feedbacks";
+import CtaSection from "../components/CtaSection/CtaSection";
+import Faq from "../components/FAQ/Faq";
 
 const token = process.env.NEXT_PUBLIC_SB_TOKEN;
 
@@ -23,6 +26,9 @@ export const components = {
   stats: Stats,
   prices: Prices,
   plans_description: PlansDescription,
+  feedbacks: Feedbacks,
+  cta_section: CtaSection,
+  faq: Faq,
 };
 
 export const getStoryblokApi = storyblokInit({

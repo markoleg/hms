@@ -1,0 +1,31 @@
+.cta_wrp {
+  border-radius: var(--br);
+  background-color: var(--main-color);
+  color: white;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+.inner {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+  justify-content: center;
+}
+.text {
+  font-size: 1.5rem;
+  line-height: 160%;
+}
+@media (width<700px) {
+  .cta_wrp {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .inner {
+    padding: 2rem 1rem 1rem;
+  }
+  .text {
+    font-size: 1.2rem;
+  }
+}

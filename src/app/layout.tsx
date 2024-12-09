@@ -5,6 +5,7 @@ import StoryblokProvider from "@/app/components/StoryblokProvider";
 import { Roboto, Philosopher } from "next/font/google";
 import { Header } from "./components/Header/Header";
 import clsx from "clsx";
+import Footer from "./components/Footer/Footer";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://hms-seven.vercel.app"),
@@ -41,6 +42,7 @@ export default function RootLayout({
         <body className={clsx(font.className, font2.variable)}>
           <Header />
           {children}
+          <Footer />
         </body>
       </html>
     </StoryblokProvider>

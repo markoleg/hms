@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import styles from "./Header.module.css";
 import Link from "next/link";
+import Modal from "../Modal/Modal";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,7 +11,14 @@ export const Header = () => {
   const openMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
   useEffect(() => {
     const menu = document.querySelector("#menu");
     const burger = document.querySelector("#brg");
@@ -47,34 +55,37 @@ export const Header = () => {
     };
   }, [lastScrollY]);
   return (
-    <header
-      className={`${styles.header} ${
-        isHeaderVisible ? styles.header_visible : styles.header_hidden
-      }`}
-    >
-      {" "}
-      <div className="container">
-        <div className={styles.header_wrp}>
-          <Link href="/" className={styles.brand}>
-            Heorhii Mynko School
-          </Link>
-          <div className={styles.brg} id="brg" onClick={openMenu}>
-            <div className={styles.line}></div>
-            <div className={styles.line}></div>
-            <div className={styles.line}></div>
-          </div>
-          <div className={styles.nav_wrp} id="menu">
-            <nav className={styles.nav} onClick={() => setIsMenuOpen(false)}>
-              <Link href="#courses">Курси</Link>
-              <Link href="#prices">Ціни</Link>
-              <Link href="#testimonails">Відгуки</Link>
-            </nav>
-            <Link href="#" className={styles.button}>
-              Пробне заняття
+    <>
+      <header
+        className={`${styles.header} ${
+          isHeaderVisible ? styles.header_visible : styles.header_hidden
+        }`}
+      >
+        {" "}
+        <div className="container">
+          <div className={styles.header_wrp}>
+            <Link href="/" className={styles.brand}>
+              Heorhii Mynko School
             </Link>
+            <div className={styles.brg} id="brg" onClick={openMenu}>
+              <div className={styles.line}></div>
+              <div className={styles.line}></div>
+              <div className={styles.line}></div>
+            </div>
+            <div className={styles.nav_wrp} id="menu">
+              <nav className={styles.nav} onClick={() => setIsMenuOpen(false)}>
+                <Link href="/#courses">Курси</Link>
+                <Link href="/#prices">Ціни</Link>
+                <Link href="/#feedbacks">Відгуки</Link>
+              </nav>
+              <button className={styles.button} onClick={() => openModal()}>
+                Пробне заняття
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-    </header>
+      </header>
+      <Modal isOpen={isModalOpen} onClose={closeModal} />
+    </>
   );
 };

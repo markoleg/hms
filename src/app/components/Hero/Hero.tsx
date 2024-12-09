@@ -1,6 +1,7 @@
 import { storyblokEditable } from "@storyblok/react";
 import styles from "./Hero.module.css";
 import Image from "next/image";
+import CTA from "../CTA/CTA";
 
 export default function Hero({ blok }: { blok: any }) {
   return (
@@ -19,7 +20,7 @@ export default function Hero({ blok }: { blok: any }) {
                 Again
               </h1>
             )}
-            <button className={styles.hero_cta}>{blok.cta_button_txt}</button>
+            <CTA>Безкоштовне пробне заняття</CTA>
           </div>
           <div className={styles.img_wrp}>
             <Image
