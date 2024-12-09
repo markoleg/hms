@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
+import { Navigation } from "swiper/modules";
 // import "swiper/css/free-mode";
 
 // import "react-tabs/style/react-tabs.css";
@@ -45,12 +46,21 @@ export default function Courses({ blok }: { blok: any }) {
                 key={tag}
                 id={tag}
                 className={styles.tab_wrp}
-                // forceRender={true}
+                forceRender={true}
               >
                 <Swiper
                   slidesPerView={"auto"}
+                  slidesPerGroup={1}
                   spaceBetween={20}
                   // freeMode={{ enabled: true }}
+                  navigation // Enable navigation
+                  modules={[Navigation]}
+                  breakpoints={{
+                    900: {
+                      slidesPerGroup: 3,
+                      // freeMode: { enabled: false },
+                    },
+                  }}
                 >
                   {blok.courses.map((course: any, index: number) => {
                     if (course.tag_list[0] === tag) {

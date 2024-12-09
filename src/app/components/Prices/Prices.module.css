@@ -102,8 +102,12 @@
 .active svg {
   transform: rotate(90deg);
 }
-@media (width<700px) {
+@media (width<600px) {
   .pagination {
     font-size: 1rem;
+  }
+  .plan_card {
+    flex: auto;
+    min-width: auto;
   }
 }

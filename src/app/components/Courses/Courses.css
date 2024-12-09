@@ -28,11 +28,14 @@
   background-color: var(--main-color);
   color: white;
 }
-.react-tabs .container > div {
-  height: 100%;
-}
-.react-tabs__tab-panel--selected {
+.react-tabs .container > div.react-tabs__tab-panel--selected {
+  max-height: 100%;
+  opacity: 1;
   animation: courses 0.5s ease;
+}
+.react-tabs .container > div {
+  max-height: 0;
+  opacity: 0;
 }
 @keyframes courses {
   0% {
@@ -47,6 +50,7 @@
 
 .react-tabs .swiper {
   overflow: visible;
+  padding-bottom: 70px;
 }
 .react-tabs .swiper-wrapper {
   align-items: stretch;
@@ -54,6 +58,16 @@
 .react-tabs .swiper-slide {
   width: 27%;
   height: auto;
+}
+.react-tabs .swiper .swiper-button-prev,
+.react-tabs .swiper .swiper-button-next {
+  top: unset;
+  bottom: 0;
+  left: 0;
+  color: var(--main-color);
+}
+.react-tabs .swiper .swiper-button-next {
+  left: 50px;
 }
 @media (width<900px) {
   .react-tabs__tab-list::-webkit-scrollbar {
