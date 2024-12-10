@@ -30,6 +30,7 @@
 }
 .faqAnswer {
   overflow: hidden;
+  line-height: 150%;
 }
 
 .icon {

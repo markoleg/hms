@@ -13,6 +13,8 @@ import Feedbacks from "../components/Feedbacks/Feedbacks";
 import CtaSection from "../components/CtaSection/CtaSection";
 import Faq from "../components/FAQ/Faq";
 
+import CourseHero from "../components/CoursePage/CourseHero/CourseHero";
+
 const token = process.env.NEXT_PUBLIC_SB_TOKEN;
 
 export const components = {
@@ -29,6 +31,8 @@ export const components = {
   feedbacks: Feedbacks,
   cta_section: CtaSection,
   faq: Faq,
+  // course page components
+  course_hero: CourseHero,
 };
 
 export const getStoryblokApi = storyblokInit({

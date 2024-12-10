@@ -11,7 +11,7 @@ export default function Faq({ blok }: { blok: any }) {
     setActiveIndex(activeIndex === index ? null : index);
   };
   return (
-    <section className={styles.faqSection}>
+    <section className={styles.faqSection} {...storyblokEditable(blok)}>
       <div className="container">
         <h2 className={styles.faqTitle}>{blok.title}</h2>
         <div className={styles.faqList}>

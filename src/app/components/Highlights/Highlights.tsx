@@ -16,8 +16,8 @@ export default function Highlights({ blok }: { blok: any }) {
               <div key={highlight.uid} className={styles.card}>
                 <Image
                   src={highlight.icon.filename}
-                  width={53}
-                  height={53}
+                  width={50}
+                  height={50}
                   alt="Іконка"
                 />
                 <div>{render(highlight.text)}</div>

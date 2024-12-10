@@ -72,8 +72,8 @@ export default function Courses({ blok }: { blok: any }) {
                           >
                             <Image
                               src={course.content.icon.filename}
-                              width={55}
-                              height={55}
+                              width={52}
+                              height={52}
                               alt={course.content.title}
                             />
                             <h3>{course.content.title}</h3>

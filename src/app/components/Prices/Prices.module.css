@@ -74,7 +74,7 @@
   gap: 1rem;
   margin-bottom: 2rem;
   position: sticky;
-  top: 8px;
+  top: 5px;
   z-index: 2;
 }
 .paginationButton {
@@ -104,7 +104,7 @@
 }
 @media (width<600px) {
   .pagination {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
   .plan_card {
     flex: auto;
