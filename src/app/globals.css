@@ -5,6 +5,7 @@
   --snd-color: #bcdc4a;
   --thrd-color: #9b9dfe;
   --br: 12px;
+  --svh: 100svh;
 }
 
 /* @media (prefers-color-scheme: dark) {

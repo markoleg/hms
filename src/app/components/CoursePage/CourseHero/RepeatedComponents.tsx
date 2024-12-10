@@ -1,10 +1,7 @@
 import {
   ISbStoriesParams,
   SbBlokData,
-  SbBlokKeyDataTypes,
-  SbReactComponentsMap,
   StoryblokClient,
-  storyblokEditable,
   StoryblokServerComponent,
 } from "@storyblok/react/rsc";
 

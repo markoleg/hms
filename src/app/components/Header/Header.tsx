@@ -54,6 +54,10 @@ export const Header = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [lastScrollY]);
+  useEffect(() => {
+    const svh = window.visualViewport?.height;
+    document.documentElement.style.setProperty("--svh", `${svh}px`);
+  }, []);
   return (
     <>
       <header
@@ -61,7 +65,6 @@ export const Header = () => {
           isHeaderVisible ? styles.header_visible : styles.header_hidden
         }`}
       >
-        {" "}
         <div className="container">
           <div className={styles.header_wrp}>
             <Link href="/" className={styles.brand}>

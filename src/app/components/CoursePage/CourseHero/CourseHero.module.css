@@ -65,7 +65,8 @@
 }
 @media (width<700px) {
   .hero_section {
-    height: calc(100svh - 68px + var(--br));
+    /* height: calc(100svh - 68px + var(--br)); */
+    height: calc(var(--svh) - 68px + var(--br));
   }
   .hero_wrp {
     flex-direction: column-reverse;
