@@ -42,3 +42,6 @@
 .form button {
   margin-top: 10px;
 }
+.succesMessage {
+  color: var(--main-color);
+}

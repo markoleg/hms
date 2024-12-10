@@ -13,7 +13,7 @@ export default function Modal({ isOpen, onClose }: ModalProps) {
     <div className={styles.modalBackdrop} onClick={onClose}>
       <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
         {submitted ? (
-          <p>Дякуємо! Ми з вами зв'яжемося.</p>
+          <p className={styles.succesMessage}>Дякуємо! Ми з вами зв'яжемося.</p>
         ) : (
           <form
             action={handleContactForm}
