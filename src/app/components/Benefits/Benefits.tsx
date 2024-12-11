@@ -25,7 +25,7 @@ export default function Benefits({ blok }: { blok: any }) {
           y: 0, // Рух на місце
           opacity: 1,
           stagger: 0.2,
-          duration: 1,
+          duration: 0.8,
 
           scrollTrigger: {
             trigger: section,
@@ -72,6 +72,7 @@ export default function Benefits({ blok }: { blok: any }) {
             {blok.cards.map((card: any, index: number) => (
               <div
                 key={index}
+                {...storyblokEditable(card)}
                 ref={(el) => {
                   if (el) cardsRef.current[index] = el;
                 }}

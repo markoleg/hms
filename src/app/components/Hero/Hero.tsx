@@ -2,6 +2,7 @@ import { storyblokEditable } from "@storyblok/react";
 import styles from "./Hero.module.css";
 import Image from "next/image";
 import CTA from "../CTA/CTA";
+import { render } from "storyblok-rich-text-react-renderer";
 
 export default function Hero({ blok }: { blok: any }) {
   return (
@@ -20,7 +21,8 @@ export default function Hero({ blok }: { blok: any }) {
                 Again
               </h1>
             )}
-            <CTA>Безкоштовне пробне заняття</CTA>
+            <div className={styles.subtitle}>{render(blok.subtitle)}</div>
+            <CTA>{blok.cta_button_txt}</CTA>
           </div>
           <div className={styles.img_wrp}>
             <Image

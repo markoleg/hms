@@ -13,7 +13,11 @@ export default function Highlights({ blok }: { blok: any }) {
         <div className="container">
           <div className={styles.highlights_wrp}>
             {blok.cards.map((highlight: any) => (
-              <div key={highlight.uid} className={styles.card}>
+              <div
+                key={highlight.uid}
+                className={styles.card}
+                {...storyblokEditable(highlight)}
+              >
                 <Image
                   src={highlight.icon.filename}
                   width={50}

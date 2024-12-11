@@ -6,7 +6,8 @@ import { render } from "storyblok-rich-text-react-renderer";
 
 export default function Faq({ blok }: { blok: any }) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
-
+  const [showAll, setShowAll] = useState(false);
+  const faqItems = showAll ? blok.items : blok.items.slice(0, 10);
   const toggleItem = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
@@ -15,7 +16,7 @@ export default function Faq({ blok }: { blok: any }) {
       <div className="container">
         <h2 className={styles.faqTitle}>{blok.title}</h2>
         <div className={styles.faqList}>
-          {blok.items.map(
+          {faqItems.map(
             (
               item: { question: string; answer: ISbRichtext },
               index: number
@@ -55,13 +56,16 @@ export default function Faq({ blok }: { blok: any }) {
                     ></path>
                   </svg>
                 </div>
-                {/* {activeIndex === index && ( */}
                 <div className={styles.faqAnswer}>{render(item.answer)}</div>
-                {/* )} */}
               </div>
             )
           )}
         </div>
+        {!showAll && blok.items.length > 10 ? (
+          <button className="cta" onClick={() => setShowAll(true)}>
+            {blok.more_button_text}
+          </button>
+        ) : null}
       </div>
     </section>
   );

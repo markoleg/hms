@@ -56,29 +56,11 @@ export const Header = () => {
   }, [lastScrollY]);
 
   // debugging inst and tg browsers ios
-  // useEffect(() => {
-  //   const svh = window.visualViewport?.height;
-  //   document.documentElement.style.setProperty("--svh", `${svh}px`);
-  // }, []);
   useEffect(() => {
-    const updateViewportHeight = () => {
-      const svh = window.visualViewport?.height || window.innerHeight;
-      document.documentElement.style.setProperty("--svh", `${svh}px`);
-    };
-
-    updateViewportHeight(); // Set initial value
-
-    // Listen for resize events
-    // window.visualViewport?.addEventListener("resize", updateViewportHeight);
-
-    // Cleanup listener on unmount
-    // return () => {
-    //   window.visualViewport?.removeEventListener(
-    //     "resize",
-    //     updateViewportHeight
-    //   );
-    // };
+    const svh = window.visualViewport?.height;
+    document.documentElement.style.setProperty("--svh", `${svh}px`);
   }, []);
+
   return (
     <>
       <header

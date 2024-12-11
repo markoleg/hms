@@ -10,7 +10,11 @@ export default function Stats({ blok }: { blok: any }) {
           <div className={styles.cards_wrp}>
             {blok.cards.map(
               (card: { number: string; text: string; uid: string }) => (
-                <div key={card.uid} className={styles.stats_card}>
+                <div
+                  key={card.uid}
+                  className={styles.stats_card}
+                  {...storyblokEditable(card)}
+                >
                   <p className={styles.num}>{card.number}</p>
                   <p>{card.text}</p>
                 </div>

@@ -8,4 +8,5 @@
 .trans_section > div {
   display: flex;
   text-wrap: nowrap;
+  white-space: nowrap;
 }

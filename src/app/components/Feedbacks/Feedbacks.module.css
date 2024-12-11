@@ -28,6 +28,12 @@
 .feedback_txt {
   line-height: 150%;
 }
+.inst svg {
+  transition: all 0.3s ease;
+}
+.inst:hover svg {
+  transform: scale(1.1);
+}
 @media (width<600px) {
   .card {
     padding: 1rem;

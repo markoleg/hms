@@ -11,7 +11,7 @@ export default function CtaSection({ blok }: { blok: any }) {
         <div className={styles.cta_wrp}>
           <div className={styles.inner}>
             <h2 className={styles.text}>{render(blok.text)}</h2>
-            <CTA>Спробувати безкоштовно</CTA>
+            <CTA>{blok.button_text}</CTA>
           </div>
           <Image
             src={blok.image.filename}
