@@ -47,7 +47,7 @@ export default function Benefits({ blok }: { blok: any }) {
           stagger: 0.8,
           scrollTrigger: {
             trigger: section,
-            start: "10% center",
+            start: "top center",
             end: "80% center",
             scrub: true,
             markers: false,

@@ -8,8 +8,8 @@ export default function Footer() {
         <div className={styles.f_wrp}>
           <Link href="/">HMS</Link>
           <nav>
-            <Link href="/#courses">Курси</Link>
-            <Link href="/#prices">Ціни</Link>
+            <Link href="#courses">Курси</Link>
+            <Link href="#prices">Ціни</Link>
             <Link href="/#feedbacks">Відгуки</Link>
           </nav>
           <div className={styles.contacts}>

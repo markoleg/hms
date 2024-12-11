@@ -105,6 +105,10 @@
 @media (width<600px) {
   .pagination {
     font-size: 1.1rem;
+    gap: 5px;
+  }
+  .paginationButton {
+    gap: 5px;
   }
   .plan_card {
     flex: auto;

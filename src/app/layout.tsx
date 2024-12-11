@@ -3,8 +3,8 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import StoryblokProvider from "@/app/components/StoryblokProvider";
 import { Roboto, Philosopher } from "next/font/google";
-import { Header } from "./components/Header/Header";
 import clsx from "clsx";
+import { Header } from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 
 export const metadata: Metadata = {

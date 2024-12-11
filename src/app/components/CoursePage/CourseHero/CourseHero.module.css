@@ -65,13 +65,15 @@
 }
 @media (width<700px) {
   .hero_section {
-    /* height: calc(100svh - 68px + var(--br)); */
+    height: calc(100svh - 68px + var(--br));
     height: calc(var(--svh) - 68px + var(--br));
+    transition: all 0.3s ease;
   }
   .hero_wrp {
     flex-direction: column-reverse;
     flex-wrap: unset;
     padding: 2rem 0;
+    justify-content: center;
   }
   .hero_inner {
     flex: none;
@@ -83,6 +85,7 @@
     align-items: center;
     max-height: 100%;
     overflow: hidden;
+    max-height: 400px;
   }
   .img_wrp img {
     max-height: 100%;

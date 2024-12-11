@@ -60,7 +60,6 @@ export default async function CoursePage({ params }: { params: Params }) {
 
   try {
     const { data } = await fetchData(slug);
-    // console.log(data.story.content.body);
 
     const bridgeOptions = {
       resolveRelations: ["courses.courses"],

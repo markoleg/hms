@@ -5,7 +5,7 @@ import {
 } from "@storyblok/react/rsc";
 import { getStoryblokApi } from "@/app/lib/StoryBlok";
 
-export const dynamic = "force-dynamic";
+// export const dynamic = "force-dynamic";
 
 async function fetchData() {
   let sbParams: ISbStoriesParams = {

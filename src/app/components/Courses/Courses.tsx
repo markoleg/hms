@@ -6,9 +6,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
-// import "swiper/css/free-mode";
-
-// import "react-tabs/style/react-tabs.css";
 
 import "./Courses.css";
 import styles from "./Courses.module.css";
@@ -67,7 +64,7 @@ export default function Courses({ blok }: { blok: any }) {
                       return (
                         <SwiperSlide key={index}>
                           <Link
-                            href={`${course.full_slug}`}
+                            href={`/${course.full_slug}`}
                             className={styles.card}
                           >
                             <Image

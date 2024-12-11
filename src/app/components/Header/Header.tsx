@@ -54,9 +54,30 @@ export const Header = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [lastScrollY]);
+
+  // debugging inst and tg browsers ios
+  // useEffect(() => {
+  //   const svh = window.visualViewport?.height;
+  //   document.documentElement.style.setProperty("--svh", `${svh}px`);
+  // }, []);
   useEffect(() => {
-    const svh = window.visualViewport?.height;
-    document.documentElement.style.setProperty("--svh", `${svh}px`);
+    const updateViewportHeight = () => {
+      const svh = window.visualViewport?.height || window.innerHeight;
+      document.documentElement.style.setProperty("--svh", `${svh}px`);
+    };
+
+    updateViewportHeight(); // Set initial value
+
+    // Listen for resize events
+    // window.visualViewport?.addEventListener("resize", updateViewportHeight);
+
+    // Cleanup listener on unmount
+    // return () => {
+    //   window.visualViewport?.removeEventListener(
+    //     "resize",
+    //     updateViewportHeight
+    //   );
+    // };
   }, []);
   return (
     <>
@@ -75,10 +96,11 @@ export const Header = () => {
               <div className={styles.line}></div>
               <div className={styles.line}></div>
             </div>
+            {/* {ua} */}
             <div className={styles.nav_wrp} id="menu">
               <nav className={styles.nav} onClick={() => setIsMenuOpen(false)}>
-                <Link href="/#courses">Курси</Link>
-                <Link href="/#prices">Ціни</Link>
+                <Link href="#courses">Курси</Link>
+                <Link href="#prices">Ціни</Link>
                 <Link href="/#feedbacks">Відгуки</Link>
               </nav>
               <button className={styles.button} onClick={() => openModal()}>
