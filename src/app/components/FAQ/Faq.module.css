@@ -21,7 +21,7 @@
 }
 .faqQuestion {
   font-size: 1.2rem;
-  font-weight: 700;
+  /* font-weight: 700; */
   font-family: var(--font-heads);
   display: flex;
   justify-content: space-between;
