@@ -12,6 +12,7 @@
   flex: 1;
   display: flex;
   overflow: hidden;
+  width: 100%;
 }
 .hero_section h1 {
   font-size: 4rem;
@@ -26,6 +27,7 @@
   flex-wrap: wrap-reverse;
   padding: 4rem 0;
   height: 100%;
+  width: 100%;
 }
 .hero_inner {
   display: flex;

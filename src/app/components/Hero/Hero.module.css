@@ -12,6 +12,7 @@
   flex: 1;
   display: flex;
   overflow: hidden;
+  width: 100%;
 }
 
 .hero_section h1 {
