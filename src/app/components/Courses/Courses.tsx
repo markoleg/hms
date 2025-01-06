@@ -13,11 +13,14 @@ import styles from "./Courses.module.css";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { render } from "storyblok-rich-text-react-renderer";
 import { storyblokEditable } from "@storyblok/react";
+import { useState } from "react";
 
 export default function Courses({ blok }: { blok: any }) {
   const tags: string[] = Array.from(
     new Set(blok.courses.map((course: any) => course.tag_list[0]))
   );
+  const [tabIndex, setTabIndex] = useState(0);
+
   return (
     <section
       className={styles.section}
@@ -28,7 +31,7 @@ export default function Courses({ blok }: { blok: any }) {
         <h2>{blok.title}</h2>
       </div>
 
-      <Tabs>
+      <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
         <div className={styles.tabs_btns_wrp}>
           <TabList>
             {tags.map((tag: string) => (
