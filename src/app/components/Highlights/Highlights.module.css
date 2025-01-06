@@ -3,6 +3,9 @@
   padding: 2rem 0;
   /* margin: 1.5rem 0; */
 }
+.subtitle {
+  margin-top: 1.5rem;
+}
 .highlights_wrp {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
