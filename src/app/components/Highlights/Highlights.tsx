@@ -7,9 +7,7 @@ export default function Highlights({ blok }: { blok: any }) {
     <section {...storyblokEditable(blok)}>
       <div className="container">
         {render(blok.title)}
-        {blok.subtitle ?? (
-          <div className={styles.subtitle}>{render(blok.subtitle)}</div>
-        )}
+        <div className={styles.subtitle}>{render(blok.subtitle)}</div>
       </div>
       <div className={styles.hl_inner_section}>
         <div className="container">
