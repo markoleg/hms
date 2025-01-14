@@ -6,7 +6,11 @@ import { render } from "storyblok-rich-text-react-renderer";
 
 export default function Hero({ blok }: { blok: any }) {
   return (
-    <section className={styles.hero_section} {...storyblokEditable(blok)}>
+    <section
+      className={styles.hero_section}
+      {...storyblokEditable(blok)}
+      id="top"
+    >
       <div className={styles.container}>
         <div className={styles.hero_wrp}>
           <div className={styles.hero_inner}>

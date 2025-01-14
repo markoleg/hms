@@ -6,7 +6,7 @@ import { storyblokEditable } from "@storyblok/react";
 
 export default function CtaSection({ blok }: { blok: any }) {
   return (
-    <section {...storyblokEditable(blok)}>
+    <section {...storyblokEditable(blok)} id="cta">
       <div className="container">
         <div className={styles.cta_wrp}>
           <div className={styles.inner}>

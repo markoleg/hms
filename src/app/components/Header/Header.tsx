@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import styles from "./Header.module.css";
 import Link from "next/link";
 import Modal from "../Modal/Modal";
+import Image from "next/image";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -71,7 +72,13 @@ export const Header = () => {
         <div className="container">
           <div className={styles.header_wrp}>
             <Link href="/" className={styles.brand}>
-              Heorhii Mynko School
+              <Image
+                src="/HMS-лого.png"
+                width={558}
+                height={162}
+                alt="logo"
+                className={styles.logo}
+              />
             </Link>
             <div className={styles.brg} id="brg" onClick={openMenu}>
               <div className={styles.line}></div>

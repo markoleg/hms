@@ -32,6 +32,10 @@
   z-index: 11;
   text-wrap: nowrap;
 }
+.logo {
+  width: 100px;
+  height: auto;
+}
 .nav_wrp {
   gap: 2rem;
   display: flex;
@@ -68,14 +72,14 @@
 .button {
   cursor: pointer;
   appearance: none;
-  background-color: transparent;
+  background-color: var(--snd-color);
   padding: 0.5rem 1rem;
   outline: none;
   border: 1px solid var(--snd-color);
   border-radius: var(--br);
   transition: all 0.2s ease;
   font-size: inherit;
-  color: inherit;
+  color: var(--main-color);
   font-weight: 500;
 }
 .button:hover {
