@@ -12,7 +12,7 @@ async function fetchData() {
 
   const storyblokApi: StoryblokClient = getStoryblokApi();
   return storyblokApi.get(`cdn/links`, sbParams, {
-    next: { revalidate: 30 },
+    next: { revalidate: 3600 },
   });
 }
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

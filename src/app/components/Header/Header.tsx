@@ -20,6 +20,8 @@ export const Header = () => {
   const closeModal = () => {
     setIsModalOpen(false);
   };
+
+  // open/close menu
   useEffect(() => {
     const menu = document.querySelector("#menu");
     const burger = document.querySelector("#brg");
@@ -31,6 +33,8 @@ export const Header = () => {
       burger?.classList.remove(`${styles.brg_open}`);
     }
   }, [isMenuOpen]);
+
+  // show/hide header
   useEffect(() => {
     const menu = document.querySelector("#menu");
     const handleScroll = () => {
@@ -73,7 +77,7 @@ export const Header = () => {
           <div className={styles.header_wrp}>
             <Link href="/" className={styles.brand}>
               <Image
-                src="/HMS-лого.png"
+                src="/HMS_logo.png"
                 width={558}
                 height={162}
                 alt="logo"
@@ -85,7 +89,6 @@ export const Header = () => {
               <div className={styles.line}></div>
               <div className={styles.line}></div>
             </div>
-            {/* {ua} */}
             <div className={styles.nav_wrp} id="menu">
               <nav className={styles.nav} onClick={() => setIsMenuOpen(false)}>
                 <Link href="#courses">Курси</Link>

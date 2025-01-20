@@ -111,6 +111,7 @@
     max-height: 100%;
     overflow: hidden;
     max-height: 400px;
+    justify-content: center;
   }
   .img_wrp img {
     max-height: 100%;

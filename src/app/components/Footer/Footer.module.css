@@ -59,11 +59,20 @@
   justify-content: center;
   padding: 1rem 0 0;
 }
+
+.logo {
+  display: block;
+  height: auto;
+}
+
 @media (width<600px) {
   .f_wrp {
     justify-items: center;
   }
   .f_wrp nav {
     justify-items: center;
+  }
+  .logo {
+    width: 200px;
   }
 }

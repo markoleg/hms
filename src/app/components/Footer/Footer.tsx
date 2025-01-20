@@ -1,12 +1,21 @@
 import Link from "next/link";
 import styles from "./Footer.module.css";
+import Image from "next/image";
 
 export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className="container">
         <div className={styles.f_wrp}>
-          <Link href="/">HMS</Link>
+          <Link href="/">
+            <Image
+              src="/HMS_logo.png"
+              width={558}
+              height={162}
+              alt="logo"
+              className={styles.logo}
+            />
+          </Link>
           <nav>
             <Link href="#courses">Курси</Link>
             <Link href="#prices">Ціни</Link>
@@ -64,7 +73,7 @@ export default function Footer() {
           </div>
         </div>
         <div className={styles.f_bottom}>
-          <small>Сopyright © 2024. HMS. Всі права захищені.</small>
+          <small>Сopyright © 2025. HMS. Всі права захищені.</small>
         </div>
       </div>
     </footer>

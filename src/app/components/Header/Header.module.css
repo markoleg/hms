@@ -33,8 +33,10 @@
   text-wrap: nowrap;
 }
 .logo {
-  width: 100px;
-  height: auto;
+  display: block;
+  /* width: 100px; */
+  width: auto;
+  height: 25px;
 }
 .nav_wrp {
   gap: 2rem;

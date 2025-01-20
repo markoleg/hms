@@ -51,7 +51,7 @@ async function fetchData(slug: string) {
 
   const storyblokApi: StoryblokClient = getStoryblokApi();
   return storyblokApi.get(`cdn/stories/courses/${slug}`, sbParams, {
-    next: { revalidate: 30 },
+    next: { revalidate: 3600 },
   });
 }
 export default async function CoursePage({ params }: { params: Params }) {

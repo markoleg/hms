@@ -17,7 +17,7 @@ async function fetchData() {
 
   const storyblokApi: StoryblokClient = getStoryblokApi();
   return storyblokApi.get(`cdn/stories/home`, sbParams, {
-    next: { revalidate: 30 },
+    next: { revalidate: 3600 },
   });
 }
 
