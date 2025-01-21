@@ -3,6 +3,8 @@ import { StoryblokClient, ISbStoriesParams } from "@storyblok/react/rsc";
 import { getStoryblokApi } from "@/app/lib/StoryBlok";
 import { BASEURL } from "./lib/Constants";
 
+export const revalidate = 3600;
+
 async function fetchData() {
   let sbParams: ISbStoriesParams = {
     version: "draft",
@@ -11,9 +13,7 @@ async function fetchData() {
   };
 
   const storyblokApi: StoryblokClient = getStoryblokApi();
-  return storyblokApi.get(`cdn/links`, sbParams, {
-    next: { revalidate: 3600 },
-  });
+  return storyblokApi.get(`cdn/links`, sbParams);
 }
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const data = await fetchData();

@@ -7,6 +7,8 @@ import {
 
 import { getStoryblokApi } from "@/app/lib/StoryBlok";
 
+export const revalidate = 3600;
+
 const COMPONENTS = ["courses", "stats", "prices", "cta_section"];
 
 async function fetchData() {
@@ -16,9 +18,7 @@ async function fetchData() {
   };
 
   const storyblokApi: StoryblokClient = getStoryblokApi();
-  return storyblokApi.get(`cdn/stories/home`, sbParams, {
-    next: { revalidate: 3600 },
-  });
+  return storyblokApi.get(`cdn/stories/home`, sbParams);
 }
 
 export default async function RepeatedComponents() {

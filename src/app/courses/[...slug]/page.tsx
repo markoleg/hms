@@ -9,7 +9,9 @@ import { Metadata } from "next";
 
 // export const dynamic = "force-dynamic";
 
-type Params = Promise<{ slug: string[] }>;
+export const revalidate = 3600;
+
+type CoursePageParams = Promise<{ slug: string[] }>;
 
 export async function generateStaticParams() {
   const courses = await fetch(
@@ -23,7 +25,11 @@ export async function generateStaticParams() {
 
   return staticParams;
 }
-export async function generateMetadata({ params }: { params: Params }) {
+export async function generateMetadata({
+  params,
+}: {
+  params: CoursePageParams;
+}) {
   const pageParams = await params;
   const slug = pageParams.slug.join("/");
   const courseData = await fetch(
@@ -50,11 +56,13 @@ async function fetchData(slug: string) {
   };
 
   const storyblokApi: StoryblokClient = getStoryblokApi();
-  return storyblokApi.get(`cdn/stories/courses/${slug}`, sbParams, {
-    next: { revalidate: 3600 },
-  });
+  return storyblokApi.get(`cdn/stories/courses/${slug}`, sbParams);
 }
-export default async function CoursePage({ params }: { params: Params }) {
+export default async function CoursePage({
+  params,
+}: {
+  params: CoursePageParams;
+}) {
   const pageParams = await params;
   const slug = pageParams.slug.join("/");
 

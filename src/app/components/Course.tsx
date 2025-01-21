@@ -1,6 +1,6 @@
 import { storyblokEditable } from "@storyblok/react/rsc";
 import { StoryblokServerComponent } from "@storyblok/react/rsc";
-import RepeatedComponents from "./CoursePage/CourseHero/RepeatedComponents";
+import RepeatedComponents from "./CoursePage/RepeatedComponents";
 
 const CoursePage = ({ blok }: { blok: any }) => (
   <main {...storyblokEditable(blok)}>
