@@ -6,6 +6,8 @@ import { Roboto, Philosopher } from "next/font/google";
 import clsx from "clsx";
 import { Header } from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import { GoogleAnalytics } from "@next/third-parties/google";
+
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://hms-seven.vercel.app"),
@@ -44,6 +46,7 @@ export default function RootLayout({
           {children}
           <Footer />
         </body>
+        <GoogleAnalytics gaId="G-NQQ9HE6MVF" />
       </html>
     </StoryblokProvider>
   );

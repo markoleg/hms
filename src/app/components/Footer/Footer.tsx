@@ -22,11 +22,11 @@ export default function Footer() {
             <Link href="/#feedbacks">Відгуки</Link>
           </nav>
           <div className={styles.contacts}>
-            <Link href="">School@gmail.com</Link>
-            <Link href="">+38 093 1234567</Link>
+            <Link href="mailto:hms.english.contact@gmail.com">hms.english.contact@gmail.com</Link>
+            <Link href="tel:+380735915625">+380 73 59 15 625</Link>
           </div>
           <div className={styles.social}>
-            <Link href="" title="Instagram">
+            <Link href="https://www.instagram.com/hms.english" title="Instagram" target="_blank">
               <svg
                 width="23"
                 height="23"
@@ -42,7 +42,7 @@ export default function Footer() {
                 />
               </svg>
             </Link>
-            <Link href="" title="Facebook">
+            <Link href="https://www.facebook.com/profile.php?id=61572529291497" title="Facebook" target="_blank">
               <svg
                 width="23"
                 height="23"
@@ -56,7 +56,7 @@ export default function Footer() {
                 />
               </svg>
             </Link>
-            <Link href="" title="Telegram">
+            <Link href="https://t.me/hmschool_english" title="Telegram" target="_blank">
               <svg
                 width="26"
                 height="22"
