@@ -7,6 +7,7 @@ import clsx from "clsx";
 import { Header } from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import CaptchaProvider from "./lib/CaptchaProvider";
 
 
 export const metadata: Metadata = {
@@ -43,7 +44,9 @@ export default function RootLayout({
       <html lang="uk">
         <body className={clsx(font.className, font2.variable)}>
           <Header />
+
           {children}
+
           <Footer />
         </body>
         <GoogleAnalytics gaId="G-NQQ9HE6MVF" />
