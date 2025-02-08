@@ -22,11 +22,11 @@ export default function Footer() {
             <Link href="/#feedbacks">Відгуки</Link>
           </nav>
           <div className={styles.contacts}>
-            <Link href="mailto:hms.english.contact@gmail.com">hms.english.contact@gmail.com</Link>
-            <Link href="tel:+380735915625">+380 73 59 15 625</Link>
+            <Link href="mailto:hms.english.contact@gmail.com" id="footer_mail">hms.english.contact@gmail.com</Link>
+            <Link href="tel:+380735915625" id="footer_phone">+380 73 59 15 625</Link>
           </div>
           <div className={styles.social}>
-            <Link href="https://www.instagram.com/hms.english" title="Instagram" target="_blank">
+            <Link href="https://www.instagram.com/hms.english" id="footer_ig" title="Instagram" target="_blank">
               <svg
                 width="23"
                 height="23"
@@ -42,7 +42,7 @@ export default function Footer() {
                 />
               </svg>
             </Link>
-            <Link href="https://www.facebook.com/profile.php?id=61572529291497" title="Facebook" target="_blank">
+            <Link href="https://www.facebook.com/profile.php?id=61572529291497" id="footer_fb" title="Facebook" target="_blank">
               <svg
                 width="23"
                 height="23"
@@ -56,7 +56,7 @@ export default function Footer() {
                 />
               </svg>
             </Link>
-            <Link href="https://t.me/hmschool_english" title="Telegram" target="_blank">
+            <Link href="https://t.me/hmschool_english" title="Telegram" id="footer_tg" target="_blank">
               <svg
                 width="26"
                 height="22"
@@ -74,6 +74,10 @@ export default function Footer() {
         </div>
         <div className={styles.f_bottom}>
           <small>Сopyright © 2025. HMS. Всі права захищені.</small>
+          <div className={styles.policies}>
+            <small><Link href={"/privacy-policy"}>Політика конфіденційності</Link>.</small>
+            <small><Link href={"/public-offer-agreement"}>Публічний договір про надання послуг</Link>.</small>
+          </div>
         </div>
       </div>
     </footer>

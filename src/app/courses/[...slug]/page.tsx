@@ -9,7 +9,6 @@ import { Metadata } from "next";
 
 // export const dynamic = "force-dynamic";
 
-export const revalidate = 3600;
 
 type CoursePageParams = Promise<{ slug: string[] }>;
 
@@ -38,7 +37,7 @@ export async function generateMetadata({
   const course = await courseData.json();
 
   const metadata: Metadata = {
-    title: course.story.content.seo_title || "HMS",
+    title: `HMS | ${course.story.content.title}` || course.story.content.seo_title || "HMS",
     description: course.story.content.seo_description,
     openGraph: {
       images: course.story.content.seo_image?.filename,

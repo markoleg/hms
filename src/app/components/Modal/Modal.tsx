@@ -3,6 +3,8 @@ import styles from "./Modal.module.css";
 import { handleContactForm } from "@/app/actions/handleContactForm";
 import { GoogleReCaptcha } from "react-google-recaptcha-v3";
 import CaptchaProvider from "@/app/lib/CaptchaProvider";
+import { sendGAEvent } from "@next/third-parties/google";
+
 
 type ModalProps = {
   isOpen: boolean;
@@ -30,6 +32,8 @@ export default function Modal({ isOpen, onClose }: ModalProps) {
       setIsSubmitting(true);
       await handleContactForm(formData);
       setSubmitted(true);
+      // Send custom event to Google Analytics
+      sendGAEvent("event", "contact_form_submit", { value: "contact_form_submit" });
     } catch (error) {
       console.error("Form submission error:", error);
     } finally {
@@ -44,7 +48,6 @@ export default function Modal({ isOpen, onClose }: ModalProps) {
           <p className={styles.succesMessage}>Дякуємо! Ми з вами зв'яжемося.</p>
         ) : (
           <CaptchaProvider recaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}>
-
             <form onSubmit={handleSubmit} className={styles.form}>
               <p className={styles.form_head}>Отримайте безкоштовне пробне заняття!</p>
               <input type="text" name="name" id="name" placeholder="Ім'я" required />
@@ -59,7 +62,6 @@ export default function Modal({ isOpen, onClose }: ModalProps) {
               </button>
             </form>
           </CaptchaProvider>
-
         )}
       </div>
     </div>

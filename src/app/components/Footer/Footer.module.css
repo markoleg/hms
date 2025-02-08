@@ -56,10 +56,22 @@
 }
 .f_bottom {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 1.5rem;
   padding: 1rem 0 0;
 }
-
+.f_bottom a {
+  text-decoration: underline;
+}
+.f_bottom .policies {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
 .logo {
   display: block;
   height: auto;
@@ -70,6 +82,9 @@
     justify-items: center;
   }
   .f_wrp nav {
+    justify-items: center;
+  }
+  .contacts {
     justify-items: center;
   }
   .logo {

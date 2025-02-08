@@ -136,3 +136,25 @@ section {
     font-size: 1.1rem;
   }
 }
+
+.policy {
+  padding: 4rem 0;
+}
+.policy .container {
+  max-width: 900px;
+}
+.policy p {
+  margin-bottom: 1rem;
+  line-height: 150%;
+}
+.policy ul,
+.policy ol {
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+  line-height: 150%;
+}
+.policy h1 {
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+  font-weight: 600;
+}

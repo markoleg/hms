@@ -5,7 +5,6 @@ import {
 } from "@storyblok/react/rsc";
 import { getStoryblokApi } from "@/app/lib/StoryBlok";
 
-export const revalidate = 3600; // Set revalidate time here (1 hour)
 
 async function fetchData() {
   let sbParams: ISbStoriesParams = {

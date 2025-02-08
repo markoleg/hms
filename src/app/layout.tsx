@@ -7,13 +7,12 @@ import clsx from "clsx";
 import { Header } from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import CaptchaProvider from "./lib/CaptchaProvider";
 
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://hms-seven.vercel.app"),
-  title: "Heorhii Mynko School",
-  description: "The best english school in Ukraine",
+  metadataBase: new URL("https://hms-english.com"),
+  title: "HMS | Heorhii Mynko School",
+  description: "HMS — це провідна школа англійської. Ми працюємо за комунікативною методикою, яка дозволяє швидко і ефективно засвоювати мову.",
   openGraph: {
     images: "/hms.png",
   },
@@ -33,6 +32,9 @@ const font2 = Philosopher({
   subsets: ["cyrillic", "latin"],
   variable: "--font-heads",
 });
+
+
+export const revalidate = 3600; // Set revalidate time here (1 hour)
 
 export default function RootLayout({
   children,

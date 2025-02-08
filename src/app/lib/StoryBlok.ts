@@ -16,6 +16,8 @@ import Faq from "../components/FAQ/Faq";
 import CourseHero from "../components/CoursePage/CourseHero/CourseHero";
 import CourseAbout from "../components/CoursePage/CourseAbout/CourseAbout";
 
+import { RichTextFullpage } from "../components/RichTextFullpage";
+
 const token = process.env.NEXT_PUBLIC_SB_TOKEN;
 
 export const components = {
@@ -35,6 +37,8 @@ export const components = {
   // course page components
   course_hero: CourseHero,
   course_about: CourseAbout,
+  // default fullpage components
+  rich_text_fullpage: RichTextFullpage,
 };
 
 export const getStoryblokApi = storyblokInit({
