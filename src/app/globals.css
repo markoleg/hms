@@ -41,7 +41,7 @@ body {
   background: var(--background);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* padding-top: 56px; */
+  padding-top: 68px;
 }
 
 * {
