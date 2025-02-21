@@ -3,18 +3,19 @@
   /* padding: var(--br) 0 0; */
   padding: 0;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
   height: calc(100svh - 68px - 93px);
 }
 .container {
   max-width: 1240px;
   margin: 0 auto;
   padding: 0 20px;
-  flex: 1;
-  display: flex;
+  /* flex: 1; */
+  /* display: flex; */
   overflow: hidden;
   width: 100%;
+  height: 100%;
 }
 .hero_section h1 {
   font-size: 4rem;
@@ -39,12 +40,12 @@
 }
 
 .img_wrp {
-  flex: 1 1 300px;
+  flex: 1;
   display: flex;
   justify-content: flex-end;
 }
 .img_wrp img {
-  height: 100%;
+  height: auto;
   width: 100%;
   display: block;
 }
@@ -100,7 +101,7 @@
     align-items: center;
     max-height: 100%;
     overflow: hidden;
-    max-height: 400px;
+    /* max-height: 400px; */
     justify-content: center;
   }
   .img_wrp img {

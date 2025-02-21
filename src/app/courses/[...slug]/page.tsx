@@ -42,7 +42,7 @@ export async function generateMetadata({
   const course = await courseData.json();
 
   const metadata: Metadata = {
-    title: `HMS | ${course.story.content.title}` || course.story.content.seo_title || "HMS",
+    title: course.story.content.seo_title ? `HMS | ${course.story.content.seo_title}` : `HMS | ${course.story.content.title}`,
     description: course.story.content.seo_description,
     openGraph: {
       images: course.story.content.seo_image?.filename,

@@ -7,30 +7,31 @@ import clsx from "clsx";
 import { Header } from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
-
+import PhoneCTA from "./components/PhoneCTA/PhoneCTA";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://hms-english.com"),
-  title: "HMS | Heorhii Mynko School",
-  description: "HMS — це провідна школа англійської. Ми працюємо за комунікативною методикою, яка дозволяє швидко і ефективно засвоювати мову.",
-  openGraph: {
-    images: "/hms.png",
-  },
+	metadataBase: new URL("https://hms-english.com"),
+	title: "HMS | Heorhii Mynko School",
+	description:
+		"HMS — це провідна школа англійської. Ми працюємо за комунікативною методикою, яка дозволяє швидко і ефективно засвоювати мову.",
+	openGraph: {
+		images: "/hms.png",
+	},
 };
 
 export const viewport: Viewport = {
-  width: "device-width",
-  initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
-  // Also supported by less commonly used
-  // interactiveWidget: 'resizes-visual',
+	width: "device-width",
+	initialScale: 1,
+	maximumScale: 1,
+	userScalable: false,
+	// Also supported by less commonly used
+	// interactiveWidget: 'resizes-visual',
 };
 const font = Roboto({ weight: "400", subsets: ["cyrillic", "latin"] });
 const font2 = Philosopher({
-  weight: "400",
-  subsets: ["cyrillic", "latin"],
-  variable: "--font-heads",
+	weight: "400",
+	subsets: ["cyrillic", "latin"],
+	variable: "--font-heads",
 });
 
 export const dynamic = "force-static";
@@ -38,22 +39,21 @@ export const dynamic = "force-static";
 export const revalidate = 3600; // Set revalidate time here (1 hour)
 
 export default function RootLayout({
-  children,
+	children,
 }: Readonly<{
-  children: React.ReactNode;
+	children: React.ReactNode;
 }>) {
-  return (
-    <StoryblokProvider>
-      <html lang="uk">
-        <body className={clsx(font.className, font2.variable)}>
-          <Header />
-
-          {children}
-
-          <Footer />
-        </body>
-        <GoogleAnalytics gaId="G-NQQ9HE6MVF" />
-      </html>
-    </StoryblokProvider>
-  );
+	return (
+		<StoryblokProvider>
+			<html lang="uk">
+				<body className={clsx(font.className, font2.variable)}>
+					<Header />
+					<PhoneCTA />
+					{children}
+					<Footer />
+				</body>
+				<GoogleAnalytics gaId="G-NQQ9HE6MVF" />
+			</html>
+		</StoryblokProvider>
+	);
 }
