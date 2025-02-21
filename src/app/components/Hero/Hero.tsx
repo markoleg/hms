@@ -14,7 +14,7 @@ export default function Hero({ blok }: { blok: any }) {
       <div className={styles.container}>
         <div className={styles.hero_wrp}>
           <div className={styles.hero_inner}>
-            {blok.title != "" ? (
+            {/* {blok.title != "" ? (
               <h1>{blok.title}</h1>
             ) : (
               <h1>
@@ -24,7 +24,8 @@ export default function Hero({ blok }: { blok: any }) {
                 </span>{" "}
                 Again
               </h1>
-            )}
+            )} */}
+              <h1>{blok.title}</h1>
             <div className={styles.subtitle}>{render(blok.subtitle)}</div>
             <CTA>{blok.cta_button_txt}</CTA>
           </div>
@@ -36,14 +37,14 @@ export default function Hero({ blok }: { blok: any }) {
               alt={blok.hero_img.alt}
             />
           </div>
-          <div className={styles.trump}>
+          {/* <div className={styles.trump}>
             <Image
               src="/trumppumpum.png"
               width={980}
               height={599}
               alt="Трамп"
             />
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

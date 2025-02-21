@@ -1,9 +1,11 @@
 .hero_section {
   /* max-height: calc(100svh - 68px - var(--br)); */
-  padding: var(--br) 0 0;
+  /* padding: var(--br) 0 0; */
+  padding: 0;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  height: calc(100svh - 68px - 93px);
 }
 .container {
   max-width: 1240px;
@@ -24,10 +26,8 @@
 .hero_wrp {
   position: relative;
   display: flex;
-  flex-wrap: wrap-reverse;
-  padding: 4rem 0;
+  padding: 2rem 0;
   height: 100%;
-  width: 100%;
 }
 .hero_inner {
   display: flex;
@@ -37,6 +37,18 @@
   justify-content: center;
   flex: 0 1 520px;
 }
+
+.img_wrp {
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: flex-end;
+}
+.img_wrp img {
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
 .subheading ul {
   padding-left: 1.2rem;
   list-style: url("/bullet.svg");
@@ -51,30 +63,31 @@
 .subheading ul li::marker {
   color: var(--snd-color);
 }
-.img_wrp {
-  flex: 1 1 300px;
-  display: flex;
-  justify-content: flex-end;
-}
-.img_wrp img {
-  height: 100%;
-  display: block;
-}
 @media (width<860px) {
   .img_wrp {
     justify-content: flex-start;
   }
 }
-@media (width<700px) {
+@media (width<855px) and (orientation:landscape) {
   .hero_section {
-    height: calc(100svh - 68px + var(--br));
-    height: calc(var(--svh) - 68px + var(--br));
+    height: auto;
+  }
+  .hero_wrp {
+    flex-direction: column-reverse;
+    flex-wrap: unset;
+    justify-content: center;
+  }
+}
+@media (width<845px) and (orientation:portrait) {
+  .hero_section {
+    height: calc(100svh - 68px);
+    height: calc(var(--svh) - 68px);
     transition: all 0.3s ease;
   }
   .hero_wrp {
     flex-direction: column-reverse;
     flex-wrap: unset;
-    padding: 2rem 0;
+    /* padding: 2rem 0; */
     justify-content: center;
   }
   .hero_inner {

@@ -13,9 +13,12 @@ async function fetchData() {
   };
 
   const storyblokApi: StoryblokClient = getStoryblokApi();
-  // Remove the revalidate option from fetch and rely on ISR through export
-  return storyblokApi.get(`cdn/stories/home`, sbParams);
+  return storyblokApi.get(`cdn/stories/home`, sbParams, {
+    next: { revalidate: 3600 }, // ISR 
+  });
 }
+export const dynamic = "force-static";
+export const revalidate = 3600;
 
 export default async function Home() {
   const { data } = await fetchData();
