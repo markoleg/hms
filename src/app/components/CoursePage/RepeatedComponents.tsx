@@ -13,7 +13,7 @@ const COMPONENTS = ["courses", "stats", "prices", "cta_section"];
 
 async function fetchData() {
   let sbParams: ISbStoriesParams = {
-    version: "draft",
+    version: "published",
     resolve_relations: ["courses.courses"],
   };
 

@@ -13,7 +13,7 @@ type CoursePageParams = Promise<{ slug: string[] }>;
 
 export async function generateStaticParams() {
   const courses = await fetch(
-    `https://api.storyblok.com/v2/cdn/stories/home/?version=draft&token=${process.env.NEXT_PUBLIC_SB_TOKEN}&resolve_relations=courses.courses`
+    `https://api.storyblok.com/v2/cdn/stories/home/?version=published&token=${process.env.NEXT_PUBLIC_SB_TOKEN}&resolve_relations=courses.courses`
   ).then((res) => res.json());
 
   const slugs = courses.rels.map((course: any) => ({
@@ -23,7 +23,6 @@ export async function generateStaticParams() {
 
   return staticParams;
 }
-export const dynamic = "force-static";
 export const revalidate = 3600;
 
 export async function generateMetadata({
@@ -34,11 +33,7 @@ export async function generateMetadata({
   const pageParams = await params;
   const slug = pageParams.slug.join("/");
   const courseData = await fetch(
-    `https://api.storyblok.com/v2/cdn/stories/courses/${slug}/?version=draft&token=${process.env.NEXT_PUBLIC_SB_TOKEN}`,
-    {
-      next: { revalidate: 3600 }, // ISR 
-    }
-  );
+    `https://api.storyblok.com/v2/cdn/stories/courses/${slug}/?version=published&token=${process.env.NEXT_PUBLIC_SB_TOKEN}`);
   const course = await courseData.json();
 
   const metadata: Metadata = {
@@ -55,14 +50,12 @@ export async function generateMetadata({
 }
 async function fetchData(slug: string) {
   let sbParams: ISbStoriesParams = {
-    version: "draft",
+    version: "published",
     resolve_relations: ["courses.courses"],
   };
 
   const storyblokApi: StoryblokClient = getStoryblokApi();
-  return storyblokApi.get(`cdn/stories/courses/${slug}`, sbParams, {
-    next: { revalidate: 3600 }, // ISR 
-  });
+  return storyblokApi.get(`cdn/stories/courses/${slug}`, sbParams);
 }
 export default async function CoursePage({
   params,

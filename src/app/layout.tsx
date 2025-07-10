@@ -34,9 +34,7 @@ const font2 = Philosopher({
 	variable: "--font-heads",
 });
 
-export const dynamic = "force-static";
 
-export const revalidate = 3600; // Set revalidate time here (1 hour)
 
 export default function RootLayout({
 	children,

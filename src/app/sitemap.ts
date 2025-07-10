@@ -7,7 +7,7 @@ export const revalidate = 3600;
 
 async function fetchData() {
   let sbParams: ISbStoriesParams = {
-    version: "draft",
+    version: "published",
     resolve_relations: ["courses.courses"],
     per_page: 100,
   };

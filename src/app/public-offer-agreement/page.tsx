@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 async function fetchData() {
     let sbParams: ISbStoriesParams = {
-        version: "draft",
+        version: "published",
     };
     const storyblokApi: StoryblokClient = getStoryblokApi();
     return storyblokApi.get(`cdn/stories/public-offer-agreement`, sbParams);
