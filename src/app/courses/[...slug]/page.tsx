@@ -8,6 +8,7 @@ import { notFound } from "next/navigation";
 import { Metadata } from "next";
 
 
+export const revalidate = 86400; // 24 hours
 
 type CoursePageParams = Promise<{ slug: string[] }>;
 
@@ -23,7 +24,6 @@ export async function generateStaticParams() {
 
   return staticParams;
 }
-export const revalidate = 3600;
 
 export async function generateMetadata({
   params,
@@ -55,7 +55,9 @@ async function fetchData(slug: string) {
   };
 
   const storyblokApi: StoryblokClient = getStoryblokApi();
-  return storyblokApi.get(`cdn/stories/courses/${slug}`, sbParams);
+  return storyblokApi.get(`cdn/stories/courses/${slug}`, sbParams, {
+    next: { revalidate: 86400 }, // cache for 24 hours
+  });
 }
 export default async function CoursePage({
   params,

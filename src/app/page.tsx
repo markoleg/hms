@@ -5,6 +5,7 @@ import {
 } from "@storyblok/react/rsc";
 import { getStoryblokApi } from "@/app/lib/StoryBlok";
 
+export const revalidate = 86400; // 24 hours
 
 async function fetchData() {
   let sbParams: ISbStoriesParams = {
@@ -13,9 +14,10 @@ async function fetchData() {
   };
 
   const storyblokApi: StoryblokClient = getStoryblokApi();
-  return storyblokApi.get(`cdn/stories/home`, sbParams);
+  return storyblokApi.get(`cdn/stories/home`, sbParams, {
+    next: { revalidate: 86400 }, // cache for 24 hours
+  });
 }
-export const revalidate = 3600;
 
 export default async function Home() {
   const { data } = await fetchData();
