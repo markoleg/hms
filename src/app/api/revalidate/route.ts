@@ -6,9 +6,12 @@ import { NextRequest } from "next/server";
 export async function POST(request: NextRequest) {
   const secret = request.nextUrl.searchParams.get("secret");
   if (!process.env.REVALIDATE_SECRET || secret !== process.env.REVALIDATE_SECRET) {
+    console.warn("revalidate: rejected, bad secret");
     return Response.json({ revalidated: false }, { status: 401 });
   }
 
+  const body = await request.json().catch(() => null);
+  console.log("revalidate: ok", body?.action ?? "", body?.full_slug ?? "");
   revalidatePath("/", "layout");
   return Response.json({ revalidated: true });
 }
