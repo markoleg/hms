@@ -4,7 +4,7 @@ import Hero from "../components/Hero/Hero";
 import Transcription from "../components/Transcription/Transcription";
 import Highlights from "../components/Highlights/Highlights";
 import Benefits from "../components/Benefits/Benefits";
-import Courses from "../components/Courses/Courses";
+import Courses from "../components/Courses/CoursesServer";
 import CoursePage from "../components/Course";
 import Stats from "../components/Stats/Stats";
 import Prices from "../components/Prices/Prices";

@@ -7,7 +7,6 @@ import {
 
 import { getStoryblokApi } from "@/app/lib/StoryBlok";
 
-export const revalidate = 3600;
 
 const COMPONENTS = ["courses", "stats", "prices", "cta_section"];
 

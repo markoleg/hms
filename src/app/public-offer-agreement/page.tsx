@@ -1,7 +1,7 @@
 import {
     StoryblokClient,
     ISbStoriesParams,
-    StoryblokStory,
+    StoryblokServerComponent,
 } from "@storyblok/react/rsc";
 import { getStoryblokApi } from "@/app/lib/StoryBlok";
 import type { Metadata } from "next";
@@ -23,5 +23,5 @@ async function fetchData() {
 export default async function PublicOfferAgreement() {
     const { data } = await fetchData();
 
-    return <StoryblokStory story={data.story} />;
+    return <StoryblokServerComponent blok={data.story.content} />;
 }

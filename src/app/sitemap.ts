@@ -3,7 +3,7 @@ import { StoryblokClient, ISbStoriesParams } from "@storyblok/react/rsc";
 import { getStoryblokApi } from "@/app/lib/StoryBlok";
 import { BASEURL } from "./lib/Constants";
 
-export const revalidate = 3600;
+export const revalidate = 2592000;
 
 async function fetchData() {
   let sbParams: ISbStoriesParams = {

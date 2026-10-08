@@ -1,11 +1,11 @@
 import {
   StoryblokClient,
   ISbStoriesParams,
-  StoryblokStory,
+  StoryblokServerComponent,
 } from "@storyblok/react/rsc";
 import { getStoryblokApi } from "@/app/lib/StoryBlok";
 
-export const revalidate = 86400; // 24 hours
+export const revalidate = 2592000; // 30 days, content is refreshed on publish via /api/revalidate
 
 async function fetchData() {
   let sbParams: ISbStoriesParams = {
@@ -15,15 +15,12 @@ async function fetchData() {
 
   const storyblokApi: StoryblokClient = getStoryblokApi();
   return storyblokApi.get(`cdn/stories/home`, sbParams, {
-    next: { revalidate: 86400 }, // cache for 24 hours
+    next: { revalidate: 2592000 },
   });
 }
 
 export default async function Home() {
   const { data } = await fetchData();
-  const bridgeOptions = {
-    resolveRelations: ["courses.courses"],
-  };
 
-  return <StoryblokStory story={data.story} bridgeOptions={bridgeOptions} />;
+  return <StoryblokServerComponent blok={data.story.content} />;
 }
